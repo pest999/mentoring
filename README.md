@@ -31,7 +31,7 @@ Complete the proposed **SpringBoot** service so that all endpoints of the **Offe
 - **(DELETE) /offer/{offerId}** — Deletes a concrete offer from the database by **offerId**.
 - **(GET) /offer** — Get all the offers from the database.
 - **(GET) /offer/{offerId}** — Get a concrete offer by **offerId**.
-- **(GET) /brand/{brandId}/partnumber/{partNumber}** — Get the timetable for a concrete product by **brandId** and **partNumber**.
+- **(GET) /brand/{brandId}/partNumber/{partNumber}** — Get the timetable for a concrete product by **brandId** and **partNumber**.
 
 ### Special attention to the "timetable" operation for a specific product:
 
