@@ -1,4 +1,4 @@
-package sdo.mentoring.pricing.service.offer;
+package sdo.mentoring.pricing.service.offer.modal;
 
 import jakarta.persistence.*;
 import lombok.Getter;

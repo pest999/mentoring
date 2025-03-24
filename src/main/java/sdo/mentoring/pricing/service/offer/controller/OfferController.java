@@ -1,10 +1,13 @@
-package sdo.mentoring.pricing.service.offer;
+package sdo.mentoring.pricing.service.offer.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sdo.mentoring.pricing.service.brand.BrandService;
+import sdo.mentoring.pricing.service.dto.Offer;
+import sdo.mentoring.pricing.service.offer.modal.OfferEntity;
+import sdo.mentoring.pricing.service.offer.service.OfferService;
 
 import java.util.List;
 
@@ -16,8 +19,8 @@ public class OfferController {
     private final BrandService brandService;
 
     @PostMapping
-    public ResponseEntity<OfferEntity> createOffer(@RequestBody OfferEntity offer) {
-        OfferEntity savedOffer = offerService.saveOffer(offer);
+    public ResponseEntity<Offer> createOffer(@RequestBody Offer offer) {
+        Offer savedOffer = offerService.saveOffer(offer);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(savedOffer);
     }
@@ -37,20 +40,20 @@ public class OfferController {
     }
 
     @GetMapping
-    public ResponseEntity<List<OfferEntity>> getAllOffers() {
+    public ResponseEntity<List<Offer>> getAllOffers() {
 
         return ResponseEntity.ok(offerService.getAllOffers());
     }
 
     @GetMapping("/{offerId}")
-    public ResponseEntity<OfferEntity> getOfferById(@PathVariable Long offerId) {
+    public ResponseEntity<Offer> getOfferById(@PathVariable Long offerId) {
 
         return ResponseEntity.ok(offerService.getOfferById(offerId));
     }
 
     @GetMapping("/{brandId}/partNumber/{partNumber}")
-    public List<OfferEntity> getBrand(@PathVariable long brandId, @PathVariable String partNumber) {
+    public ResponseEntity<List<Offer>> getBrand(@PathVariable long brandId, @PathVariable String partNumber) {
 
-        return brandService.getBrandByIdAndPartNumber(brandId, partNumber);
+        return ResponseEntity.ok(offerService.getOffersByBrandIdAndPartNumber(brandId, partNumber));
     }
 }

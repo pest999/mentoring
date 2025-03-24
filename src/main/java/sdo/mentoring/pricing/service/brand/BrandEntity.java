@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 @Table(name = "brands")
 public class BrandEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long brandId;

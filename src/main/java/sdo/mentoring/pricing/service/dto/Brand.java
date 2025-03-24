@@ -8,9 +8,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class Brand implements Serializable {
-
     private Integer brandId;
-
     private String name;
 }
 

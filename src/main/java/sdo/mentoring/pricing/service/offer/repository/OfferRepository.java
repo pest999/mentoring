@@ -1,7 +1,8 @@
-package sdo.mentoring.pricing.service.offer;
+package sdo.mentoring.pricing.service.offer.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import sdo.mentoring.pricing.service.offer.modal.OfferEntity;
 
 import java.util.List;
 

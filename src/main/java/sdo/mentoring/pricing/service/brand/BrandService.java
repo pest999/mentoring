@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
-import sdo.mentoring.pricing.service.offer.OfferEntity;
-import sdo.mentoring.pricing.service.offer.OfferRepository;
+import sdo.mentoring.pricing.service.offer.modal.OfferEntity;
+import sdo.mentoring.pricing.service.offer.repository.OfferRepository;
 
 import java.util.List;
 
